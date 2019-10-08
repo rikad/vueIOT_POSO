@@ -49,32 +49,27 @@
 export default {
   data () {
     return {
-      items: [
-        {
-          action: 'account_tree',
-          title: 'Station 1',
-          items: [
-            { title: 'Sensors 1', id: 1 },
-            { title: 'Sensors 2', id: 2 },
-            { title: 'Sensors 3', id: 3 }
-          ]
-        },
-        {
-          action: 'account_tree',
-          title: 'Station 2',
-          items: [
-            { title: 'Sensors 1', id: 1 },
-            { title: 'Sensors 2', id: 2 },
-            { title: 'Sensors 3', id: 3 }
-          ]
-        }
-      ]
+      items: []
     }
   },
   methods: {
     go: function (to) {
       this.$router.push('/sensor/' + to)
+    },
+    genNav: function(data) {
+
+      this.items = data.map(function (value) {
+        return {
+          action: 'account_tree',
+          title: value.name,
+          items: value.sensors.map( sensor => { return { id : sensor.id, title : sensor.name } })
+        }
+      })
+
     }
+  },
+  mounted: async function () {
+    this.genNav(await this.$store.getters.stations);
   }
 }
 </script>

@@ -53,7 +53,8 @@ export default {
     Sidebar
   },
   data: () => ({
-    drawer: null
+    drawer: null,
+    stations: []
   }),
   methods: {
     go: function (to) {
