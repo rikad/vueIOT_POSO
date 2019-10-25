@@ -6,6 +6,7 @@
     <v-tab>Item One</v-tab>
     <v-tab>Item Two</v-tab>
     <v-tab>Item Three</v-tab>
+    <v-tab>Item Four</v-tab>
     </v-tabs>
   </div>
   
