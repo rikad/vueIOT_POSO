@@ -50,7 +50,7 @@ export default {
     source: String
   },
   components: {
-    Sidebar
+    Sidebar,
   },
   data: () => ({
     drawer: null,
