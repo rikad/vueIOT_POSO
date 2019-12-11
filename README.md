@@ -1,4 +1,4 @@
-# adopt
+# POSO UI
 
 ## Project setup
 ```
